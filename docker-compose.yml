@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  main_app:
+    build: ./
+    ports:
+      - "3000:3000"
+  billing:
+    build: ./
+    ports:
+      - "3001:3001"
+    environment:
+      - MS_NAME=BillingService
+  auth:
+    build: ./
+    ports:
+      - "3002:3002"
+    environment:
+      - MS_NAME=AuthService
